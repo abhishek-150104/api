@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM learning</title>
+  <style>
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+    li {
+        margin: 10px;
+    }
+    img {
+        width: 150px;
+        height: auto;
+        display: block;
+    }
+</style>
+</head>
+<body>
+  <!-- <div>
+    <h1 id="Title" class="heading">Hi welcome to javascript  <span style="display: none;"> test text</span></h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias at saepe aperiam maiores eligendi amet libero nobis voluptate, aut tenetur id reprehenderit aliquid rerum beatae. Iure maxime asperiores explicabo deleniti?</p>
+  </div>
+  <input type="password" >
+<div id ="Number">
+  <ul>
+    <li class="list-item" id="one">one</li>
+    <li class="list-item" id="two">two</li>
+    <li class="list-item" id="google"><a href="https://www.google.com">google</a></li>
+  </ul>
+</div> -->
+<div>
+  <ul id = "images">
+    <li id="image1"><img src="https://via.placeholder.com/150" alt="Image 1"></li>
+    <li id="image2"><img src="https://via.placeholder.com/150/FF5733" alt="Image 2"></li>
+    <li id="image3"><img src="https://via.placeholder.com/150/33FF57" alt="Image 3"></li>
+    <li id="image4"><img src="https://via.placeholder.com/150/3357FF" alt="Image 4"></li>
+    <li id="image5"><img src="https://via.placeholder.com/150/FFFF33" alt="Image 5"></li>
+    <li id="text1"><a href="https://www.google.com"> google</a></li>
+</ul>
+</div>
+ 
+  
+</body>
+<script>
+  // // documment.getElementBtId('one'),addEvebtListener('click',function(){},false) //3rd parameter is false by default so no need to use
+  // //attachEvent()
+  // // jOuery - on
+  // // document.getElementById('one').addEventListener('click',function(e){
+  // //   alert("owl clicked")
+  // //   console.log(e)
+  // // })
+
+  // // type,timestamp, defaultaprevented
+  // //// target , toElement, srcElement, currentTarget
+  // //clientX, clinetY, screenX, ScreenY
+  // //attKey, ctrlKey, shiftKey, keyCode
+
+  // document.getElementById('one').addEventListener('click',function(e){
+  //   // alert("owl clicked")
+  //   console.log("clicked in one")
+  //   e.stopPropagation();// to stop bubbling outside
+  // },false)
+
+  // //EVENT Propagation -> Event bubbling-false(inside to outside   is default false)  Event Capturing-true(outside to inside when set true in 3rd parameter in event listener)
+
+  // document.getElementById('Number').addEventListener('click',function(e){
+  //   // alert("owl clicked")
+  //   console.log("clicked in Number")
+  // },false)
+
+
+
+  // document.getElementById('google').addEventListener('click',function(e){
+  //   // alert("owl clicked")
+  //   e.preventDefault()
+  //   e.stopPropagation()
+  //   console.log("google clicked")
+  // },false)
+  document.querySelector('#images').addEventListener('click', function (e) {
+    // alert("clicked");
+    e.preventDefault();
+    console.log(e.target.tagName);//e.target.parentNode
+    if(e.target.tagName=== 'IMG'){
+      let removeIt=e.target.parentNode;
+      removeIt.remove();
+    }
+    
+
+    // removeIt.parentNode.remove();
+    // removeIt.parentNode.removeChild(removeIt);
+}, false);
+
+</script>
+</html>
+
